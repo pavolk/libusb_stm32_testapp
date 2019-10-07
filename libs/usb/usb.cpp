@@ -1,4 +1,6 @@
 
+// @author: Pavol Kurina, pavol dot kurina at google dot com
+
 #include <iostream>
 #include <sstream>
 #include "usb.h"
