@@ -1,4 +1,4 @@
-// @author: Pavol Kurina, pavol dot kurina at google dot com
+// @author: Pavol Kurina, pavol dot kurina at gmail dot com
 
 #include <iostream>
 #include <sstream>
