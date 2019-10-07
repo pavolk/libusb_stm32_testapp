@@ -1,0 +1,2 @@
+
+vcpkg.exe install libusb
