@@ -16,11 +16,19 @@ cd libusb_stm32_testapp
 
 See [here](https://github.com/microsoft/vcpkg/blob/master/README.md) for the documentation on installation and getting started with `vcpkg` C++ package manager.
 
+The root `CMakeLists.txt` will use the environment variable `VCPKG_DIR` to look for the `vcpkg.cmake` file. Set the variable `VCPKG_DIR` to point to the root directory of the `vcpkg` installation. E.g. on Windows like this
+
+```
+setx VCPKG_DIR=c:\Users\<usename>\vcpkg
+```
+
 Then just run following to install `libusb` to the host:
 
 ```
 bootstrap.bat
 ```
+
+> **Note**: The script expects the `vcpkg` to be callable from the shell, e.g. the `PATH` variable should point to the root directory of the `vcpkg` installation.
 
 # Configure and build
 
@@ -35,4 +43,27 @@ cmake --build . --config Debug
 
 ```
 start libusb_stm32_testapp.sln
+```
+
+# Run benchmark
+
+```
+bin\Debug\stm32_bench.exe
+```
+
+Example output
+
+```
+Starting send_test...
+ ep_addr=0x1
+ buffer_size=4096
+ transfer_count=2000
+Sending 8192000 bytes took 11563millis.
+Output transfer-rate was 708467 bytes/sec.
+Starting receive_test...
+ ep_addr=0x81
+ buffer_size=8192
+ transfer_count=2000
+Received 1022000 bytes took 1628millis.
+Input transfer-rate was 627764 bytes/sec.
 ```
