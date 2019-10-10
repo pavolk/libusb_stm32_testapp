@@ -1,5 +1,5 @@
 # libusb_stm32_testapp
-This is a simple libusb-application to benchmark the USB-connection to the STM32F4-Discovery board with this [firmware](https://github.com/pavolk/stm32_usb_test_wcid.git).
+This is a simple libusb-application to benchmark the USB-connection to the [STM32F4-Discovery](https://www.st.com/en/evaluation-tools/stm32f4discovery.html) board with this [firmware](https://github.com/pavolk/stm32_usb_test_wcid.git).
 
 # Prepare the workspace
 
