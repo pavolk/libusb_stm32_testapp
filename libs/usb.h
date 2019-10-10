@@ -1,5 +1,5 @@
 
-// @author: Pavol Kurina, pavol dot kurina at google dot com
+// @author: Pavol Kurina, pavol dot kurina at gmail dot com
 
 #ifndef UTILS_USB_USB_H
 #define UTILS_USB_USB_H
