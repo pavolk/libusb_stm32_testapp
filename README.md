@@ -47,11 +47,13 @@ start libusb_stm32_testapp.sln
 
 # Run benchmark
 
+Supposed that a STM32F4-Discovery board with this [firmware](https://github.com/pavolk/stm32_usb_test_wcid.git) is connected to the host, then...
+
 ```
 bin\Debug\stm32_bench.exe
 ```
 
-Example output
+... will output something like this:
 
 ```
 Starting send_test...
@@ -67,3 +69,5 @@ Starting receive_test...
 Received 1022000 bytes took 1628millis.
 Input transfer-rate was 627764 bytes/sec.
 ```
+
+> **Note**: No driver installation is necessary, since the firmware implements a WCID device, which will make sure that the WinUsb driver is mapped to the device automatically.
