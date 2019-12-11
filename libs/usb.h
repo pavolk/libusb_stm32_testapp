@@ -49,7 +49,9 @@ namespace usb
 
 	ConfigurationDescriptor get_configuration_descriptor(Device dev, unsigned value = 1);
 
-	unsigned get_max_packet_size(Device dev, unsigned char endpoint);
+	unsigned get_max_packet_size(Device dev, unsigned char endpoint_address);
+
+	unsigned get_max_packet_size(Handle handle, unsigned char endpoint_address);
 
 	struct ControlRequest {
 		uint8_t bRequestType;

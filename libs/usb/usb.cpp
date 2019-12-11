@@ -143,6 +143,23 @@ namespace usb
 		std::get_deleter<HandleDeleter>(handle)->release_interface_before_close(interface_number);
 	}
 
+	unsigned get_max_packet_size(Handle handle, unsigned char endpoint_address)
+	{
+		auto device = libusb_get_device(handle.get());
+		if (!device) {
+			throw std::invalid_argument("Invalid handle.");
+		}
+
+		auto mps_or_err = libusb_get_max_packet_size(device, endpoint_address);
+		if (mps_or_err < 0) {
+			throw system_error(error_message("libusb_get_max_packet_size", mps_or_err), static_cast<libusb_error>(mps_or_err));
+		}
+
+		return mps_or_err;
+	}
+
+	
+
 	void free_config_descriptor(libusb_config_descriptor* desc)
 	{
 		libusb_free_config_descriptor(desc);
