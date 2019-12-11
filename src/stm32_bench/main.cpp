@@ -30,6 +30,7 @@ static test_result bulk_test(usb::Handle handle, uint8_t ep_addr, size_t buffer_
 {
 	std::stringstream ss;
 	ss << " ep_addr=0x" << std::hex << static_cast<unsigned>(ep_addr) << std::endl;
+	ss << " ep_mps=" << std::dec << usb::get_max_packet_size(handle, ep_addr) << std::endl;
 	ss << " buffer_size=" << std::dec << buffer_size << std::endl;
 	ss << " transfer_count=" << std::dec << transfer_count << std::endl;
 	std::cout << ss.str();
